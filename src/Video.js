@@ -19,6 +19,7 @@ import { Row } from 'reactstrap'
 import Modal from 'react-bootstrap/Modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import "./Video.css"
+import zIndex from '@material-ui/core/styles/zIndex'
 
 const server_url = process.env.NODE_ENV === 'production' ? 'https://puspendu-meeting.vercel.app' : "http://localhost:4001/"
 
@@ -315,7 +316,7 @@ class Video extends Component {
 							let video = document.createElement('video')
 
 							let css = {minWidth: cssMesure.minWidth, minHeight: cssMesure.minHeight, maxHeight: "100%", margin: "10px",
-								borderStyle: "solid", borderColor: "#bdbdbd", objectFit: "fill"}
+								borderStyle: "solid", borderColor: "#bdbdbd", objectFit: "fill", borderRadius: "10px"}
 							for(let i in css) video.style[i] = css[i]
 
 							video.style.setProperty("width", cssMesure.width)
@@ -368,7 +369,7 @@ class Video extends Component {
 		ctx.resume()
 		return Object.assign(dst.stream.getAudioTracks()[0], { enabled: false })
 	}
-	
+
 	black = ({ width = 640, height = 480 } = {}) => {
 		let canvas = Object.assign(document.createElement("canvas"), { width, height })
 		canvas.getContext('2d').fillRect(0, 0, width, height)
@@ -465,7 +466,7 @@ class Video extends Component {
 
 						<div style={{ justifyContent: "center", textAlign: "center", paddingTop: "40px" }}>
 							<video id="my-video" ref={this.localVideoref} autoPlay muted style={{
-								borderStyle: "solid",borderColor: "#bdbdbd",objectFit: "fill",width: "60%",height: "30%"}}></video>
+								borderStyle: "solid",borderColor: "#bdbdbd",objectFit: "fill",width: "20%",height: "20%", borderRadius: "16px", zIndex: "999"}}></video>
 						</div>
 					</div>
 					:

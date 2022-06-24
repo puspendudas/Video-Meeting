@@ -19,7 +19,6 @@ import { Row } from 'reactstrap'
 import Modal from 'react-bootstrap/Modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import "./Video.css"
-import zIndex from '@material-ui/core/styles/zIndex'
 
 const server_url = process.env.NODE_ENV === 'production' ? 'https://puspendu-meeting.vercel.app/' : "http://localhost:4001/"
 

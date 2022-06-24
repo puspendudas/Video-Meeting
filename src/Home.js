@@ -8,7 +8,7 @@ class Home extends Component {
   	constructor (props) {
 		super(props)
 		this.state = {
-			url: uuidv4()
+			url: uuidv4(8)
 		}
 	}
 

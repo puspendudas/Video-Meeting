@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { Input, Button, IconButton } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import "./Home.css"
+import { v4 as uuidv4 } from 'uuid';
 
 class Home extends Component {
   	constructor (props) {
 		super(props)
 		this.state = {
-			url: ''
+			url: uuidv4()
 		}
 	}
 
@@ -46,8 +47,8 @@ class Home extends Component {
 					textAlign: "center", margin: "auto", marginTop: "100px"
 				}}>
 					<p style={{ margin: 0, fontWeight: "bold", paddingRight: "50px" }}>Start or join a meeting</p>
-					<Input placeholder="URL" onChange={e => this.handleChange(e)} />
-					<Button variant="contained" color="primary" onClick={this.join} style={{ margin: "20px" }}>Go</Button>
+					{/* <Input placeholder="URL" onChange={e => this.handleChange(e)} /> */}
+					<Button variant="contained" color="primary" onClick={this.join} style={{ margin: "20px" }}>Start a Meeting</Button>
 				</div>
 			</div>
 		)
